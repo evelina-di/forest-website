@@ -17,6 +17,27 @@ body {
 	width: 100vw;
 }
 
+h1 {
+	font-size: 2.4rem;
+	font-weight: 400;
+}
+
+h2 {
+	font-size: 1.7rem;
+	font-weight: 400;
+	margin: 1em;
+}
+
+h3 {
+	margin: 1em 1em 1em 0;
+}
+
+p {
+	line-height: 1.45em;
+	font-weight: 300;
+	text-align: justify;
+}
+
 .wrapper {
 	position: relative;
 	height: 100%;
@@ -26,16 +47,9 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-
-	&_header {
-		height: 100vh;
-		width: 100vw;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
 }
+
+// nawigacja
 
 .nav {
 	position: absolute;
@@ -66,8 +80,7 @@ body {
 .burger-icon {
 	z-index: 1000;
 	position: fixed;
-	background: transparent;
-	color: black;
+	color: rgb(159, 159, 159);
 	font-size: 3rem;
 	padding: 0.8em;
 }
@@ -76,10 +89,12 @@ body {
 	left: 0;
 }
 
-// hero graphics
+// header mobile
 
 .header {
-	position: absolute;
+	position: relative;
+	height: 100vh;
+	width: 100vw;
 	left: 0;
 	top: 0;
 	font-size: 1.3rem;
@@ -104,6 +119,86 @@ body {
 	}
 }
 
+// about-us mobile
+
+.about-us {
+	position: relative;
+	height: 100vh;
+
+	&_img {
+		width: 100%;
+	}
+}
+
+// banner mobile
+
+.banner {
+	background-image: linear-gradient(
+			45deg,
+			rgba(0, 0, 0, 0.5),
+			rgba(0, 0, 0, 0.3)
+		),
+		url("../img/girl-small.jpg");
+	background-size: cover;
+	background-position: center;
+	height: 300px;
+
+	&_text {
+		color: white;
+		font-size: 1.6rem;
+		border: 1px solid white;
+		text-align: center;
+		padding: 2em;
+	}
+}
+
+// oferta mobile
+
+.offer {
+	&_text {
+		text-align: center;
+	}
+
+	&_card {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 2em;
+		box-shadow: 2px 1px 8px rgb(175, 175, 175);
+		border-radius: 5px;
+		height: 330px;
+		width: 75vw;
+
+		&-price {
+			font-size: 2.8rem;
+			font-weight: 600;
+		}
+
+		&-list {
+			margin: 1.5em;
+		}
+
+		&-btn {
+			border: none;
+			background: none;
+			border-radius: 5px;
+			padding: 0.6em 4em;
+			box-shadow: 2px 1px 8px rgb(175, 175, 175);
+
+			&--emphasized {
+				background-color: rgb(84, 225, 119);
+			}
+		}
+	}
+}
+
+.offer h3 {
+	margin: 0;
+	font-weight: 400;
+	font-size: 1.5rem;
+}
+
 // footer {
 // 	height: 200px;
 // 	width: 100%;
@@ -115,22 +210,40 @@ body {
 
 @media (min-width: 576px) {
 	.wrapper {
-		height: 60vh;
 		text-align: start;
 		padding: 3em;
+	}
+
+	.header {
+		height: 75vh;
+	}
+
+	.about-us {
+		height: 800px;
+
+		&_text {
+			padding: 0 1em;
+		}
+	}
+
+	.banner {
+		margin: 2em 0;
+		height: 250px;
+
+		&_text {
+			padding: 2em 5em;
+		}
 	}
 }
 
 @media (min-width: 768px) {
 	.wrapper {
 		width: 80vw;
-		margin: 0 auto;
+		height: 100%;
 		padding: 0;
+		margin: 0 auto;
 
 		&_nav {
-			height: 80px;
-			padding: 0;
-			margin: 0 auto;
 			display: flex;
 			flex-direction: row;
 			justify-content: flex-end;
@@ -138,17 +251,20 @@ body {
 		}
 
 		&_header {
-			height: 300px;
 			align-items: flex-start;
+		}
+
+		&_about-us {
+			border: 2px dotted lime;
 		}
 	}
 
 	.nav {
 		position: sticky;
+		height: 80px;
+		width: 100vw;
 		top: 0;
 		left: 0;
-		height: 100%;
-		width: 100vw;
 		background-color: rgba(255, 255, 255, 0.5);
 
 		&_link {
@@ -184,18 +300,64 @@ body {
 		display: none;
 	}
 
+	h1 {
+		font-size: 2rem;
+		font-weight: 600;
+	}
+
+	h3 {
+		margin: 0 0 1em;
+	}
+
+	p {
+		font-size: 0.9rem;
+		line-height: 1.8em;
+	}
+
 	.header {
 		position: relative;
 		width: 100vw;
+		height: 300px;
 		background-image: linear-gradient(
 				45deg,
-				rgba(0, 0, 0, 0.5),
-				rgba(0, 0, 0, 0.3)
+				rgba(2, 4, 2, 0.758),
+				rgba(0, 0, 0, 0.564)
 			),
 			url("../img/jungle-big.jpg");
+		background-position: center;
 
 		&__text-companyname {
-			margin-bottom: 0.4em;
+			font-size: 1.5rem;
+			margin-bottom: 0;
+		}
+	}
+
+	.about-us {
+		height: 500px;
+
+		&_content {
+			display: flex;
+		}
+
+		&_img {
+			width: 380px;
+			align-self: flex-start;
+			object-fit: contain;
+		}
+	}
+
+	.banner {
+		background-image: linear-gradient(
+				45deg,
+				rgba(17, 31, 13, 0.5),
+				rgba(5, 21, 3, 0.697)
+			),
+			url("../img/girl-big.jpg");
+
+		&_text {
+			font-size: 1.8rem;
+			font-weight: 400;
+			padding: 1em 6em;
 		}
 	}
 }
@@ -204,6 +366,11 @@ body {
 }
 
 @media (min-width: 1200px) {
+	.about-us {
+		&_img {
+			width: 440px;
+		}
+	}
 }
 
 @media (min-width: 1400px) {
