@@ -52,7 +52,8 @@ p {
 // nawigacja
 
 .nav {
-	position: absolute;
+	position: fixed;
+	top: 0;
 	height: 100vh;
 	width: 100vw;
 	background-color: rgb(255, 255, 255);
@@ -80,9 +81,13 @@ p {
 .burger-icon {
 	z-index: 1000;
 	position: fixed;
-	color: rgb(159, 159, 159);
+	color: rgba(255, 255, 255, 0.8);
 	font-size: 3rem;
 	padding: 0.8em;
+}
+
+.burger-black {
+	color: rgb(53, 53, 53);
 }
 
 .active {
@@ -169,6 +174,7 @@ p {
 		border-radius: 5px;
 		height: 330px;
 		width: 75vw;
+		transition: transform 0.3s;
 
 		&-price {
 			font-size: 2.8rem;
@@ -177,6 +183,21 @@ p {
 
 		&-list {
 			margin: 1.5em;
+			list-style: none;
+			line-height: 1.4rem;
+		}
+
+		&-list li i {
+			margin-right: 0.5em;
+		}
+
+		&-list .incl i {
+			color: rgb(84, 225, 119);
+		}
+
+		&-list .not-incl i,
+		&-list .not-incl {
+			color: rgb(150, 150, 150);
 		}
 
 		&-btn {
@@ -185,11 +206,31 @@ p {
 			border-radius: 5px;
 			padding: 0.6em 4em;
 			box-shadow: 2px 1px 8px rgb(175, 175, 175);
+			cursor: pointer;
+			transition: background-color 0.3s;
+
+			&:hover {
+				background-color: rgb(233, 233, 233);
+			}
 
 			&--emphasized {
 				background-color: rgb(84, 225, 119);
+				&:hover {
+					background-color: rgb(74, 197, 105);
+				}
 			}
 		}
+	}
+
+	&_card:hover {
+		transform: scale(0.97);
+	}
+
+	a {
+		font-size: 1.2rem;
+		text-decoration: none;
+		color: black;
+		border-bottom: 1px solid black;
 	}
 }
 
@@ -199,12 +240,27 @@ p {
 	font-size: 1.5rem;
 }
 
-// footer {
-// 	height: 200px;
-// 	width: 100%;
-// 	background-color: rgb(161, 111, 111);
-// 	bottom: 0;
-// }
+.footer {
+	height: 15vh;
+	width: 100%;
+	background-color: rgb(232, 232, 232);
+	bottom: 0;
+
+	h3 {
+		font-size: 2rem;
+	}
+
+	&_container-desktop {
+		display: none;
+	}
+
+	&_bottom-text {
+		padding: 1em 2em;
+		border-top: 1px solid rgb(122, 122, 122);
+		background-color: rgb(232, 232, 232);
+		text-align: center;
+	}
+}
 
 // large devices - tablets //
 
@@ -212,6 +268,12 @@ p {
 	.wrapper {
 		text-align: start;
 		padding: 3em;
+
+		&_footer {
+			flex-direction: row;
+			padding-top: 1em;
+			padding-bottom: 1em;
+		}
 	}
 
 	.header {
@@ -234,6 +296,71 @@ p {
 			padding: 2em 5em;
 		}
 	}
+
+	.offer {
+		margin-bottom: 1.5em;
+
+		&_text {
+			font-size: 1.4rem;
+		}
+
+		&_cards {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		&_card {
+			width: 320px;
+			height: 350px;
+		}
+	}
+
+	.footer {
+		height: 200px;
+
+		&_container {
+			&-left {
+				width: 40%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				& h3 {
+					font-weight: normal;
+					font-size: 2.4rem;
+				}
+			}
+
+			&-right {
+				width: 60%;
+				display: flex;
+				justify-content: space-between;
+				line-height: 1.5rem;
+
+				& h3 {
+					font-size: 1rem;
+				}
+			}
+		}
+
+		&_card {
+			& ul {
+				list-style: none;
+			}
+
+			& a {
+				text-decoration: none;
+				font-size: 0.8rem;
+				color: rgb(122, 122, 122);
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
 }
 
 @media (min-width: 768px) {
@@ -254,8 +381,8 @@ p {
 			align-items: flex-start;
 		}
 
-		&_about-us {
-			border: 2px dotted lime;
+		&_footer {
+			flex-direction: row;
 		}
 	}
 
@@ -358,6 +485,24 @@ p {
 			font-size: 1.8rem;
 			font-weight: 400;
 			padding: 1em 6em;
+		}
+	}
+
+	.offer {
+		&_card {
+			width: 250px;
+			height: 350px;
+		}
+	}
+
+	.footer {
+		&_container-left {
+			width: 50%;
+		}
+
+		&_container-right {
+			width: 50%;
+			justify-content: space-around;
 		}
 	}
 }

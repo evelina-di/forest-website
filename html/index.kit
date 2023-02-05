@@ -13,7 +13,7 @@
 <body>
     <!-- @include 'nav.kit' -->
 
-    <div class="header">
+    <div class="header section">
         <div class="wrapper wrapper_header">
             <p class="header__text header__text-companyname">Forest Group</p>
             <h1 class="header__text">Najpiękniejszy park w Twojej okolicy!</h1>
@@ -21,7 +21,7 @@
     </div>
 
 
-    <div class="about-us" id="about-us">
+    <div class="about-us section white-section" id="about-us">
         <div class="wrapper wrapper_about-us">
             <h2 class="about-us_header">O NAS</h2>
             <div class="about-us_content">
@@ -41,13 +41,13 @@
         </div>
     </div>
 
-    <div class="banner">
+    <div class="banner section">
         <div class="wrapper">
             <p class="banner_text">Przygoda dla całej rodziny</p>
         </div>
     </div>
 
-    <div class="offer" id="offer">
+    <div class="offer section white-section" id="offer">
         <div class="wrapper wrapper_offer">
 
             <h2 class="offer_header">OFERTA</h2>
@@ -57,11 +57,11 @@
                     <h3>Demo</h3>
                     <p class="offer_card-price">$0</p>
                     <ul class="offer_card-list">
-                        <li>opcja w pakiecie</li>
-                        <li>opcja w pakiecie</li>
-                        <li>opcja poza pakietem</li>
-                        <li>opcja poza pakietem</li>
-                        <li>opcja poza pakietem</li>
+                        <li class="incl"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="incl"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="not-incl"><i class="fa-solid fa-minus"></i>opcja poza pakietem</li>
+                        <li class="not-incl"><i class="fa-solid fa-minus"></i>opcja poza pakietem</li>
+                        <li class="not-incl"><i class="fa-solid fa-minus"></i>opcja poza pakietem</li>
                     </ul>
 
                     <button class="offer_card-btn">Wybierz</button>
@@ -71,11 +71,11 @@
                     <h3>Standard</h3>
                     <p class="offer_card-price">$99</p>
                     <ul class="offer_card-list">
-                        <li>opcja w pakiecie</li>
-                        <li>opcja w pakiecie</li>
-                        <li>opcja poza pakietem</li>
-                        <li>opcja poza pakietem</li>
-                        <li>opcja poza pakietem</li>
+                        <li class="incl"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="incl"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="incl"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="not-incl"><i class="fa-solid fa-minus"></i>opcja poza pakietem</li>
+                        <li class="not-incl"><i class="fa-solid fa-minus"></i>opcja poza pakietem</li>
                     </ul>
 
                     <button class="offer_card-btn offer_card-btn--emphasized">Wybierz</button>
@@ -85,22 +85,22 @@
                     <h3>Premium</h3>
                     <p class="offer_card-price">$299</p>
                     <ul class="offer_card-list">
-                        <li>opcja w pakiecie</li>
-                        <li>opcja w pakiecie</li>
-                        <li>opcja poza pakietem</li>
-                        <li>opcja poza pakietem</li>
-                        <li>opcja poza pakietem</li>
+                        <li class="incl"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="incl"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="incl"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="incl"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="incl"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
                     </ul>
 
                     <button class="offer_card-btn offer_card-btn">Wybierz</button>
 
                 </div>
             </div>
-
-
+            <p><a href="#offer-details"> Poznaj więcej szczegółów...</a></p>
         </div>
     </div>
 
+    <!-- @include 'footer.kit' -->
 
     <script src="/dist/js/main.min.js"></script>
 </body>
