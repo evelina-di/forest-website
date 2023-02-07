@@ -1,5 +1,5 @@
-@use "medium";
-@use "large";
+@use "colors" as *;
+@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers";
 
 *,
 *::before,
@@ -7,6 +7,10 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 body {
@@ -49,36 +53,41 @@ p {
 	align-items: center;
 }
 
-// nawigacja
+// NAV //
 
 .nav {
 	position: fixed;
 	top: 0;
 	height: 100vh;
 	width: 100vw;
-	background-color: rgb(255, 255, 255);
+	background-color: $white;
 	left: -900px;
 	z-index: 90;
 	transition: left ease-in-out 0.4s;
 
-	&_link {
+	&__link {
 		font-size: 2rem;
 		text-decoration: none;
-		color: black;
+		color: $black;
 		padding: 0.9em;
-		border-bottom: 1px solid black;
+		border-bottom: 1px solid $black;
 
 		&:last-child {
 			border: none;
 		}
 	}
 
-	&_logo {
+	&__company-name {
+		color: $dark-gray;
+		font-size: 1.6rem;
+	}
+
+	&__logo {
 		display: none;
 	}
 }
 
-.burger-icon {
+.hamburger {
 	z-index: 1000;
 	position: fixed;
 	color: rgba(255, 255, 255, 0.8);
@@ -86,15 +95,11 @@ p {
 	padding: 0.8em;
 }
 
-.burger-black {
-	color: rgb(53, 53, 53);
-}
-
 .active {
 	left: 0;
 }
 
-// header mobile
+// HEADER //
 
 .header {
 	position: relative;
@@ -104,14 +109,10 @@ p {
 	top: 0;
 	font-size: 1.3rem;
 	text-align: center;
-	background-image: linear-gradient(
-			45deg,
-			rgba(0, 0, 0, 0.5),
-			rgba(0, 0, 0, 0.3)
-		),
-		url("../img/jungle-small.jpg");
+	background-image: $dark-gray-gradient, url("../img/jungle-small.jpg");
 	background-size: cover;
 	background-position: center;
+	background-attachment: fixed;
 
 	&__text {
 		color: #fff;
@@ -124,31 +125,59 @@ p {
 	}
 }
 
-// about-us mobile
+.header-mob {
+	// position: fixed;
+	top: 0;
+	height: 130px;
+	width: 100vw;
+	background-image: linear-gradient(
+			346deg,
+			rgb(70 133 65 / 75%),
+			rgba(0, 0, 0, 0.393)
+		),
+		url("../img/jungle-small.jpg");
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+	box-shadow: 4px 4px 10px gray;
+
+	i {
+		font-size: 1.6rem;
+		color: $light-gray;
+		margin: 0.5em;
+	}
+
+	&__text {
+		margin: 0.3em;
+		font-size: 1.6rem;
+		color: rgba(255, 255, 255);
+		font-weight: 400;
+	}
+}
+
+// ABOUT-US //
 
 .about-us {
 	position: relative;
 	height: 100vh;
 
-	&_img {
+	&__img {
 		width: 100%;
 	}
 }
 
-// banner mobile
+// BANNER //
 
 .banner {
-	background-image: linear-gradient(
-			45deg,
-			rgba(0, 0, 0, 0.5),
-			rgba(0, 0, 0, 0.3)
-		),
-		url("../img/girl-small.jpg");
+	background-image: $dark-gray-gradient, url("../img/girl-small.jpg");
 	background-size: cover;
 	background-position: center;
 	height: 300px;
 
-	&_text {
+	&__text {
 		color: white;
 		font-size: 1.6rem;
 		border: 1px solid white;
@@ -157,20 +186,20 @@ p {
 	}
 }
 
-// oferta mobile
+// OFFER //
 
 .offer {
-	&_text {
+	&__text {
 		text-align: center;
 	}
 
-	&_card {
+	&__card {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		margin: 2em;
-		box-shadow: 2px 1px 8px rgb(175, 175, 175);
+		box-shadow: 2px 1px 8px $medium-gray;
 		border-radius: 5px;
 		height: 330px;
 		width: 75vw;
@@ -192,12 +221,12 @@ p {
 		}
 
 		&-list .incl i {
-			color: rgb(84, 225, 119);
+			color: $light-green;
 		}
 
 		&-list .not-incl i,
 		&-list .not-incl {
-			color: rgb(150, 150, 150);
+			color: $medium-gray;
 		}
 
 		&-btn {
@@ -205,71 +234,154 @@ p {
 			background: none;
 			border-radius: 5px;
 			padding: 0.6em 4em;
-			box-shadow: 2px 1px 8px rgb(175, 175, 175);
+			box-shadow: 2px 1px 8px $medium-gray;
 			cursor: pointer;
 			transition: background-color 0.3s;
 
 			&:hover {
-				background-color: rgb(233, 233, 233);
+				background-color: $light-gray;
 			}
 
 			&--emphasized {
-				background-color: rgb(84, 225, 119);
+				background-color: $light-green;
 				&:hover {
-					background-color: rgb(74, 197, 105);
+					background-color: $dark-green;
 				}
 			}
 		}
+
+		h3 {
+			margin: 0;
+			font-weight: 400;
+			font-size: 1.5rem;
+		}
 	}
 
-	&_card:hover {
+	&__card:hover {
 		transform: scale(0.97);
 	}
 
-	a {
+	&__details-link {
+		margin: 1em 0 3em 0;
 		font-size: 1.2rem;
+		color: $black;
+		border-bottom: 1px solid $black;
+	}
+
+	& a {
 		text-decoration: none;
-		color: black;
-		border-bottom: 1px solid black;
 	}
 }
 
-.offer h3 {
-	margin: 0;
-	font-weight: 400;
-	font-size: 1.5rem;
+// CONTACT //
+
+.contact {
+	&__box {
+		margin-bottom: 2.5em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+
+		h1 {
+			margin-top: 0.8em;
+			margin-bottom: 1em;
+		}
+
+		h2 {
+			margin-bottom: 0.8em;
+		}
+
+		&-line {
+			height: 10px;
+			width: 30%;
+			color: gray;
+			z-index: 99999;
+		}
+	}
+
+	input,
+	textarea {
+		font-family: inherit;
+		width: 100%;
+		padding: 0.5em;
+		border: 1px solid rgba(0, 0, 0, 0.393);
+		border-radius: 5px;
+	}
+
+	textarea {
+		min-height: 120px;
+		margin-bottom: 2em;
+	}
+
+	button {
+		border: none;
+		background-color: $light-green;
+		border-radius: 5px;
+		align-self: flex-end;
+		padding: 0.6em 6em;
+		box-shadow: 2px 1px 8px $medium-gray;
+		cursor: pointer;
+		transition: background-color 0.3s;
+
+		&:hover {
+			background-color: $light-gray;
+		}
+	}
+
+	&__form {
+		&-error {
+			color: tomato;
+			font-weight: 400;
+			margin-top: 0;
+			visibility: hidden;
+		}
+
+		&-thankyou {
+			text-align: center;
+			margin-bottom: 0.5em;
+			visibility: hidden;
+		}
+	}
 }
+
+// FOOTER //
 
 .footer {
 	height: 15vh;
 	width: 100%;
-	background-color: rgb(232, 232, 232);
+	background-color: $light-gray;
 	bottom: 0;
 
 	h3 {
 		font-size: 2rem;
+
+		& i {
+			color: $dark-gray;
+		}
 	}
 
-	&_container-desktop {
+	&__container-desktop {
 		display: none;
 	}
 
-	&_bottom-text {
+	&__bottom-text {
 		padding: 1em 2em;
-		border-top: 1px solid rgb(122, 122, 122);
-		background-color: rgb(232, 232, 232);
+		border-top: 1px solid $medium-gray;
+		background-color: $light-gray;
 		text-align: center;
 	}
 }
 
-// large devices - tablets //
+// MEDIA //
 
 @media (min-width: 576px) {
 	.wrapper {
 		text-align: start;
 		padding: 3em;
 
-		&_footer {
+		&__footer {
 			flex-direction: row;
 			padding-top: 1em;
 			padding-bottom: 1em;
@@ -278,12 +390,13 @@ p {
 
 	.header {
 		height: 75vh;
+		background-image: $dark-gray-gradient, url("../img/jungle-big.jpg");
 	}
 
 	.about-us {
 		height: 800px;
 
-		&_text {
+		&__text {
 			padding: 0 1em;
 		}
 	}
@@ -292,7 +405,7 @@ p {
 		margin: 2em 0;
 		height: 250px;
 
-		&_text {
+		&__text {
 			padding: 2em 5em;
 		}
 	}
@@ -300,18 +413,18 @@ p {
 	.offer {
 		margin-bottom: 1.5em;
 
-		&_text {
+		&__text {
 			font-size: 1.4rem;
 		}
 
-		&_cards {
+		&__cards {
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			flex-wrap: wrap;
 		}
 
-		&_card {
+		&__card {
 			width: 320px;
 			height: 350px;
 		}
@@ -320,7 +433,7 @@ p {
 	.footer {
 		height: 200px;
 
-		&_container {
+		&__container {
 			&-left {
 				width: 40%;
 				display: flex;
@@ -345,7 +458,7 @@ p {
 			}
 		}
 
-		&_card {
+		&__card {
 			& ul {
 				list-style: none;
 			}
@@ -353,7 +466,7 @@ p {
 			& a {
 				text-decoration: none;
 				font-size: 0.8rem;
-				color: rgb(122, 122, 122);
+				color: $dark-gray;
 
 				&:hover {
 					text-decoration: underline;
@@ -364,24 +477,28 @@ p {
 }
 
 @media (min-width: 768px) {
+	.section {
+		scroll-margin-top: 80px;
+	}
+
 	.wrapper {
 		width: 80vw;
 		height: 100%;
 		padding: 0;
 		margin: 0 auto;
 
-		&_nav {
+		&__nav {
 			display: flex;
 			flex-direction: row;
 			justify-content: flex-end;
 			z-index: 1000;
 		}
 
-		&_header {
+		&__header {
 			align-items: flex-start;
 		}
 
-		&_footer {
+		&__footer {
 			flex-direction: row;
 		}
 	}
@@ -394,7 +511,7 @@ p {
 		left: 0;
 		background-color: rgba(255, 255, 255, 0.5);
 
-		&_link {
+		&__link {
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -404,26 +521,33 @@ p {
 			border: none;
 
 			&:hover {
-				background-color: black;
-				color: white;
+				background-color: $black;
+				color: $white;
 			}
 		}
 
-		&_logo {
+		&__logo {
 			position: absolute;
 			left: 0;
 			height: 100%;
 			display: flex;
 			align-items: center;
 			font-size: 2rem;
+			color: $dark-gray;
 
 			i {
-				margin-right: 0.8em;
+				margin-right: 0.4em;
 			}
+		}
+
+		&__current {
+			background-color: $black;
+			color: $white;
+			cursor: default;
 		}
 	}
 
-	.burger-icon {
+	.hamburger {
 		display: none;
 	}
 
@@ -452,6 +576,7 @@ p {
 			),
 			url("../img/jungle-big.jpg");
 		background-position: center;
+		background-attachment: scroll;
 
 		&__text-companyname {
 			font-size: 1.5rem;
@@ -459,14 +584,18 @@ p {
 		}
 	}
 
+	.header-mob {
+		display: none;
+	}
+
 	.about-us {
 		height: 500px;
 
-		&_content {
+		&__content {
 			display: flex;
 		}
 
-		&_img {
+		&__img {
 			width: 380px;
 			align-self: flex-start;
 			object-fit: contain;
@@ -474,14 +603,10 @@ p {
 	}
 
 	.banner {
-		background-image: linear-gradient(
-				45deg,
-				rgba(17, 31, 13, 0.5),
-				rgba(5, 21, 3, 0.697)
-			),
-			url("../img/girl-big.jpg");
+		background-image: $dark-gray-gradient, url("../img/girl-big.jpg");
+		background-attachment: fixed;
 
-		&_text {
+		&__text {
 			font-size: 1.8rem;
 			font-weight: 400;
 			padding: 1em 6em;
@@ -489,18 +614,18 @@ p {
 	}
 
 	.offer {
-		&_card {
+		&__card {
 			width: 250px;
 			height: 350px;
 		}
 	}
 
 	.footer {
-		&_container-left {
+		&__container-left {
 			width: 50%;
 		}
 
-		&_container-right {
+		&__container-right {
 			width: 50%;
 			justify-content: space-around;
 		}
@@ -512,7 +637,7 @@ p {
 
 @media (min-width: 1200px) {
 	.about-us {
-		&_img {
+		&__img {
 			width: 440px;
 		}
 	}

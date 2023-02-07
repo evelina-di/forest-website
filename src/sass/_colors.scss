@@ -1,0 +1,19 @@
+$white: #f0f0f0;
+$black: #101010;
+$dark-gray: rgb(77, 77, 77);
+$medium-gray: rgb(164, 164, 164);
+$light-gray: rgb(232, 232, 232);
+$dark-green: rgb(74, 197, 105);
+$light-green: rgb(84, 225, 119);
+
+$dark-gray-gradient: linear-gradient(
+    45deg,
+    rgba(1, 1, 1, 0.5),
+    rgba(104, 104, 104, 0.566)
+);
+
+$light-green-gradient: linear-gradient(
+    90deg,
+    rgba(9, 20, 8, 0.773),
+    rgba(0, 0, 0, 0.393)
+);

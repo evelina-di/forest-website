@@ -10,59 +10,97 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- <link href="../dist/css/hamburgers.css" rel="stylesheet"> -->
 <script src="https://kit.fontawesome.com/b48edd6f37.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class="burger-icon">
-    <i class="fa-solid fa-bars"></i>
-</div>
+    <button class="hamburger hamburger--arrow" type="button">
+    <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+    </span>
+</button>
 
 <nav class="nav">
 
-    <div class="wrapper wrapper_nav">
+    <div class="wrapper wrapper__nav">
 
 
-        <div class="nav_logo">
+        <div class="nav__logo">
             <i class="fa-solid fa-tree"></i>
-            <p>Forest</p>
+            <p class="nav__company-name">Forest</p>
         </div>
 
-        <a class="nav_link" href="index.html">Home</a>
-        <a class="nav_link" href="#about-us">O nas</a>
-        <a class="nav_link" href="#offer">Oferta</a>
-        <a class="nav_link" href="contact.html">Kontakt</a>
+        <a class="nav__link nav__link-home" href="index.html">Home</a>
+        <a class="nav__link nav__link-about-us" href="#about-us">O nas</a>
+        <a class="nav__link nav__link-offer" href="#offer">Oferta</a>
+        <a class="nav__link nav__link-contact" href="contact.html">Kontakt</a>
 
     </div>
 </nav>
+    <div class="header-mob section">
+    <p class="header-mob__text">Forest Group</p><i class="fa-solid fa-tree"></i>
+</div>
+    <div class="header section">
+    <div class="wrapper wrapper__header">
+        <p class="header__text header__text-companyname">Forest Group</p>
+        <h1 class="header__text">Najpiękniejszy park w Twojej okolicy!</h1>
+    </div>
+</div>
+
+    <div class="contact">
+        <div class="wrapper wrapper__contact">
+
+            <div class="contact__box contact__contact-data">
+                <h1>Kontakt</h1>
+                <h2>Adres:</h2>
+                <p>Ul. Leśna 123</p>
+                <p>41-940 Łodygowice</p>
+                <div class="contact__box-line"></div>
+                <h2>Numer telefonu:</h2>
+                <p>+48 123-123-123</p>
+                <h2>Email:</h2>
+                <p>contact@forestgroup.pl</p>
+            </div>
+            <div class="contact__box contact__form">
+                <h1 class="contact__form-title">Formularz kontaktowy</h1>
+                <input name="mail" id="mail" type="mail" placeholder="Twój adres email">
+                <p class="contact__form-error">Podaj poprawny adres email</p>
+                <textarea name="question" id="question" placeholder="Twoja wiadomość"></textarea>
+
+                <p class="contact__form-thankyou">Dziękujemy za kontakt, wkrótce się odezwiemy!</p>
+                <button class="submit">Wyślij</button>
+            </div>
+        </div>
+    </div>
 
     <footer>
     <div class="footer">
-        <div class="wrapper wrapper_footer">
+        <div class="wrapper wrapper__footer">
 
-            <div class="footer_container footer_container-left">
-                <h3 class="footer_company-name"><i class="fa-solid fa-tree"></i> Forest</h3>
+            <div class="footer__container footer__container-left">
+                <h3 class="footer__company-name"><i class="fa-solid fa-tree"></i> Forest</h3>
             </div>
 
-            <div class="footer_container footer_container-desktop footer_container-right">
-                <div class="footer_card">
-                    <h3 class="footer_card-title">O nas</h3>
+            <div class="footer__container footer__container-desktop footer__container-right">
+                <div class="footer__card">
+                    <h3 class="footer__card-title">O nas</h3>
                     <ul>
                         <li><a href="#">Historia</a></li>
                         <li><a href="#">Parki</a></li>
                         <li><a href="#">Opinie</a></li>
                     </ul>
                 </div>
-                <div class="footer_card">
-                    <h3 class="footer_card-title">Nasza firma</h3>
+                <div class="footer__card">
+                    <h3 class="footer__card-title">Nasza firma</h3>
                     <ul>
                         <li><a href="#">Praca</a></li>
                         <li><a href="#">Kadry</a></li>
                         <li><a href="#">Zarząd</a></li>
                     </ul>
                 </div>
-                <div class="footer_card">
-                    <h3 class="footer_card-title">Dokumenty</h3>
+                <div class="footer__card">
+                    <h3 class="footer__card-title">Dokumenty</h3>
                     <ul>
                         <li><a href="#">Wnioski</a></li>
                         <li><a href="#">Rezerwacje</a></li>
@@ -71,7 +109,7 @@
             </div>
 
         </div>
-        <p class="footer_bottom-text">&copy; <span class="footer__year"></span> Forest Group Company Ltd.</p>
+        <p class="footer__bottom-text">&copy; <span class="footer__year"></span> Forest Group Company Ltd.</p>
     </div>
 </footer>
     <script src="/dist/js/main.min.js"></script>

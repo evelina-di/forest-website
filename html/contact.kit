@@ -11,6 +11,34 @@
 
 <body>
     <!-- @include 'nav.kit' -->
+    <!-- @include 'header-mob.kit' -->
+    <!-- @include 'header.kit' -->
+
+    <div class="contact">
+        <div class="wrapper wrapper__contact">
+
+            <div class="contact__box contact__contact-data">
+                <h1>Kontakt</h1>
+                <h2>Adres:</h2>
+                <p>Ul. Leśna 123</p>
+                <p>41-940 Łodygowice</p>
+                <div class="contact__box-line"></div>
+                <h2>Numer telefonu:</h2>
+                <p>+48 123-123-123</p>
+                <h2>Email:</h2>
+                <p>contact@forestgroup.pl</p>
+            </div>
+            <div class="contact__box contact__form">
+                <h1 class="contact__form-title">Formularz kontaktowy</h1>
+                <input name="mail" id="mail" type="mail" placeholder="Twój adres email">
+                <p class="contact__form-error">Podaj poprawny adres email</p>
+                <textarea name="question" id="question" placeholder="Twoja wiadomość"></textarea>
+
+                <p class="contact__form-thankyou">Dziękujemy za kontakt, wkrótce się odezwiemy!</p>
+                <button class="submit">Wyślij</button>
+            </div>
+        </div>
+    </div>
 
     <!-- @include 'footer.kit' -->
     <script src="/dist/js/main.min.js"></script>
