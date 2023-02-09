@@ -25,9 +25,16 @@ console.log(window.innerWidth);
 const handleMobHeader = () => {
 	if (window.location.href.indexOf("contact") > -1 && window.innerWidth < 768) {
 		header.style.display = "none";
-	} else {
-		header.style.display = "flex";
-	}
+	} else if (
+		window.location.href.indexOf("404") > -1 &&
+		window.innerWidth < 768
+	) {
+		header.style.display = "none";
+	} else if (
+		window.location.href.indexOf("offer") > -1 &&
+		window.innerWidth < 768
+	)
+		header.style.display = "none";
 };
 
 const handleMobileMenu = () => {

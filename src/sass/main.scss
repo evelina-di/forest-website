@@ -15,8 +15,8 @@ html {
 
 body {
 	position: relative;
-	display: flex;
-	flex-direction: column;
+	height: 100%;
+	min-height: 100vh;
 	font-family: "Montserrat", sans-serif;
 	width: 100vw;
 }
@@ -32,10 +32,6 @@ h2 {
 	margin: 1em;
 }
 
-h3 {
-	margin: 1em 1em 1em 0;
-}
-
 p {
 	line-height: 1.45em;
 	font-weight: 300;
@@ -44,13 +40,18 @@ p {
 
 .wrapper {
 	position: relative;
-	height: 100%;
+	min-height: 100%;
 	width: 100%;
 	padding: 2em;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding-bottom: 20vh;
+
+	&__footer {
+		padding-bottom: 0;
+	}
 }
 
 // NAV //
@@ -90,6 +91,7 @@ p {
 .hamburger {
 	z-index: 1000;
 	position: fixed;
+	top: 0;
 	color: rgba(255, 255, 255, 0.8);
 	font-size: 3rem;
 	padding: 0.8em;
@@ -166,6 +168,11 @@ p {
 
 	&__img {
 		width: 100%;
+	}
+
+	h3 {
+		margin-top: 1.5em;
+		margin-bottom: 1.5em;
 	}
 }
 
@@ -265,11 +272,15 @@ p {
 		margin: 1em 0 3em 0;
 		font-size: 1.2rem;
 		color: $black;
-		border-bottom: 1px solid $black;
 	}
 
-	& a {
-		text-decoration: none;
+	&__link-homepage:visited {
+		color: $black;
+	}
+
+	&__link-homepage:hover {
+		color: $white;
+		background-color: $black;
 	}
 }
 
@@ -284,12 +295,12 @@ p {
 		align-items: center;
 		text-align: center;
 
-		h1 {
-			margin-top: 0.8em;
-			margin-bottom: 1em;
+		i {
+			margin-top: 2em;
+			margin-bottom: 0.8em;
 		}
 
-		h2 {
+		h3 {
 			margin-bottom: 0.8em;
 		}
 
@@ -312,7 +323,7 @@ p {
 
 	textarea {
 		min-height: 120px;
-		margin-bottom: 2em;
+		margin-bottom: 1em;
 	}
 
 	button {
@@ -328,6 +339,11 @@ p {
 		&:hover {
 			background-color: $light-gray;
 		}
+	}
+
+	iframe {
+		border: none;
+		height: 400px;
 	}
 
 	&__form {
@@ -346,16 +362,29 @@ p {
 	}
 }
 
+.offer-subpage {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	h1 {
+		margin-bottom: 1em;
+	}
+}
+
 // FOOTER //
 
 .footer {
-	height: 15vh;
+	position: absolute;
+	height: 20vh;
 	width: 100%;
 	background-color: $light-gray;
 	bottom: 0;
 
 	h3 {
 		font-size: 2rem;
+		margin-bottom: 0.2em;
 
 		& i {
 			color: $dark-gray;
@@ -367,11 +396,18 @@ p {
 	}
 
 	&__bottom-text {
+		display: block;
+		font-size: 0.5rem;
+		bottom: 0;
 		padding: 1em 2em;
 		border-top: 1px solid $medium-gray;
 		background-color: $light-gray;
 		text-align: center;
 	}
+}
+
+.page-404 {
+	height: 40vh;
 }
 
 // MEDIA //
@@ -380,11 +416,13 @@ p {
 	.wrapper {
 		text-align: start;
 		padding: 3em;
+		padding-bottom: 20vh;
 
 		&__footer {
 			flex-direction: row;
+			flex-wrap: wrap;
 			padding-top: 1em;
-			padding-bottom: 1em;
+			padding-bottom: 0;
 		}
 	}
 
@@ -474,6 +512,10 @@ p {
 			}
 		}
 	}
+
+	iframe {
+		width: 100%;
+	}
 }
 
 @media (min-width: 768px) {
@@ -498,8 +540,22 @@ p {
 			align-items: flex-start;
 		}
 
+		&__contact {
+			flex-direction: row;
+			align-items: center;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+
 		&__footer {
 			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		&__offer,
+		&__offer-subpage,
+		&__contact {
+			padding-bottom: 200px;
 		}
 	}
 
@@ -554,10 +610,6 @@ p {
 	h1 {
 		font-size: 2rem;
 		font-weight: 600;
-	}
-
-	h3 {
-		margin: 0 0 1em;
 	}
 
 	p {
@@ -620,14 +672,54 @@ p {
 		}
 	}
 
+	.contact {
+		&__box {
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+
+		&__contact-data {
+			width: 370px;
+		}
+
+		&__map {
+			width: 600px;
+		}
+
+		h3 {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		i {
+			margin-top: 1em;
+		}
+
+		&__form input,
+		textarea {
+			width: 600px;
+		}
+	}
+
+	iframe {
+		border: none;
+		width: 100%;
+	}
+
 	.footer {
 		&__container-left {
 			width: 50%;
 		}
 
 		&__container-right {
+			margin-top: 1em;
 			width: 50%;
 			justify-content: space-around;
+		}
+
+		&__bottom-text {
+			width: 100vh;
+			align-self: flex-end;
 		}
 	}
 }
