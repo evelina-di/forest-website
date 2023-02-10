@@ -9,6 +9,7 @@ const messageArea = document.querySelector("#question");
 const emailError = document.querySelector(".contact__form-error");
 const thankyouMessage = document.querySelector(".contact__form-thankyou");
 const submitBtn = document.querySelector(".submit");
+const subpages = ["contact", "404", "offer", "thankyou"];
 
 const handleBurgerMenu = () => {
 	nav.classList.toggle("active");
@@ -20,21 +21,12 @@ const handleBurgerMenu = () => {
 	}
 };
 
-console.log(window.innerWidth);
-
 const handleMobHeader = () => {
-	if (window.location.href.indexOf("contact") > -1 && window.innerWidth < 768) {
-		header.style.display = "none";
-	} else if (
-		window.location.href.indexOf("404") > -1 &&
-		window.innerWidth < 768
-	) {
-		header.style.display = "none";
-	} else if (
-		window.location.href.indexOf("offer") > -1 &&
-		window.innerWidth < 768
-	)
-		header.style.display = "none";
+	subpages.forEach((subpage) => {
+		if (window.location.href.indexOf(subpage) > -1 && window.innerWidth < 768) {
+			header.style.display = "none";
+		}
+	});
 };
 
 const handleMobileMenu = () => {
@@ -64,9 +56,9 @@ const clearContent = () => {
 	messageArea.value = "";
 };
 
-const showThankYouMessage = () => {
-	thankyouMessage.style.visibility = "visible";
-};
+// const showThankYouMessage = () => {
+// 	thankyouMessage.style.visibility = "visible";
+// };
 
 const handleCurrentYear = () => {
 	const year = new Date().getFullYear();
