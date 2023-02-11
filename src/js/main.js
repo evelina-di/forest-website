@@ -7,7 +7,7 @@ const header = document.querySelector(".header");
 const emailInput = document.querySelector("#mail");
 const messageArea = document.querySelector("#question");
 const emailError = document.querySelector(".contact__form-error");
-const thankyouMessage = document.querySelector(".contact__form-thankyou");
+const formInfo = document.querySelector(".contact__form-info");
 const submitBtn = document.querySelector(".submit");
 const subpages = ["contact", "404", "offer", "thankyou"];
 
@@ -51,13 +51,23 @@ const checkEmail = () => {
 	}
 };
 
+const handleForm = () => {
+	if (emailInput.value === "" || messageArea.value === "") {
+		formInfo.style.visibility = "visible";
+		formInfo.textContent = "Wypełnij oba pola aby wysłać wiadomość.";
+	} else if (emailInput.value !== "" || !messageArea.value !== "") {
+		checkEmail();
+	}
+};
+
 const clearContent = () => {
 	emailInput.value = "";
 	messageArea.value = "";
 };
 
 const showThankYouMessage = () => {
-	thankyouMessage.style.visibility = "visible";
+	formInfo.style.visibility = "visible";
+	formInfo.textContent = "Wiadomość wysłana!";
 };
 
 const handleCurrentYear = () => {
@@ -69,4 +79,4 @@ handleMobileMenu();
 burgerIcon.addEventListener("click", handleBurgerMenu);
 handleCurrentYear();
 handleMobHeader();
-submitBtn.addEventListener("click", checkEmail);
+submitBtn.addEventListener("click", handleForm);
