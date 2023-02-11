@@ -115,7 +115,8 @@ p {
 	top: 0;
 	font-size: 1.3rem;
 	text-align: center;
-	background-image: $dark-gray-gradient, url("../img/jungle-small.jpg");
+	background-image: $dark-gray-gradient,
+		url("/forest-website/img/jungle-small.jpg");
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -141,7 +142,7 @@ p {
 			rgb(70 133 65 / 75%),
 			rgba(0, 0, 0, 0.393)
 		),
-		url("../img/jungle-small.jpg");
+		url("/forest-website/img/jungle-small.jpg");
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -183,7 +184,8 @@ p {
 // BANNER //
 
 .banner {
-	background-image: $dark-gray-gradient, url("../img/girl-small.jpg");
+	background-image: $dark-gray-gradient,
+		url("/forest-website/img/girl-small.jpg");
 	background-size: cover;
 	background-position: center;
 	height: 300px;
@@ -428,7 +430,8 @@ p {
 
 	.header {
 		height: 75vh;
-		background-image: $dark-gray-gradient, url("../img/jungle-big.jpg");
+		background-image: $dark-gray-gradient,
+			url("/forest-website/img/jungle-big.jpg");
 	}
 
 	.about-us {
@@ -597,6 +600,7 @@ p {
 			display: flex;
 			align-items: center;
 			font-size: 2rem;
+			text-decoration: none;
 			color: $dark-gray;
 
 			i {
@@ -624,7 +628,7 @@ p {
 				rgba(2, 4, 2, 0.758),
 				rgba(0, 0, 0, 0.564)
 			),
-			url("../img/jungle-big.jpg");
+			url("/forest-website/img/jungle-big.jpg");
 		background-position: center;
 		background-attachment: scroll;
 
@@ -653,7 +657,8 @@ p {
 	}
 
 	.banner {
-		background-image: $dark-gray-gradient, url("../img/girl-big.jpg");
+		background-image: $dark-gray-gradient,
+			url("/forest-website/img/girl-big.jpg");
 		background-attachment: fixed;
 
 		&__text {
