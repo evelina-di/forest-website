@@ -46,10 +46,10 @@ function javaScript(done) {
 	done();
 }
 
-function convertImages(done) {
-	src(paths.img).pipe(imagemin()).pipe(dest(paths.imgDest));
-	done();
-}
+// function convertImages(done) {
+// 	src(paths.img).pipe(imagemin()).pipe(dest(paths.imgDest));
+// 	done();
+// }
 
 function handleKits(done) {
 	src(paths.html).pipe(kit()).pipe(dest("./"));
@@ -77,7 +77,7 @@ function watchForChanges(done) {
 		[paths.html, paths.sass, paths.js],
 		parallel(handleKits, sassCompiler, javaScript)
 	).on("change", reload);
-	watch(paths.img, convertImages).on("change", reload);
+	// watch(paths.img, convertImages).on("change", reload);
 	done();
 }
 
