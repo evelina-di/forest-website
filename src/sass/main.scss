@@ -38,6 +38,10 @@ p {
 	text-align: justify;
 }
 
+a {
+	text-decoration: none;
+}
+
 .wrapper {
 	position: relative;
 	min-height: 100%;
@@ -133,7 +137,6 @@ p {
 }
 
 .header-mob {
-	// position: fixed;
 	top: 0;
 	height: 130px;
 	width: 100vw;
