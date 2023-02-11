@@ -247,6 +247,7 @@ a {
 		}
 
 		&-btn {
+			color: $black;
 			border: none;
 			background: none;
 			border-radius: 5px;
@@ -409,7 +410,7 @@ a {
 .page-404,
 .offer-subpage,
 .thankyou {
-	padding: 5em 1em 0em 1em;
+	padding: 5em 1em 2em 1em;
 
 	p {
 		padding-top: 2em;
