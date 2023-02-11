@@ -56,10 +56,6 @@ const clearContent = () => {
 	messageArea.value = "";
 };
 
-// const showThankYouMessage = () => {
-// 	thankyouMessage.style.visibility = "visible";
-// };
-
 const handleCurrentYear = () => {
 	const year = new Date().getFullYear();
 	footerYear.innerText = year;
