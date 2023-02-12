@@ -38,10 +38,10 @@ p {
 	text-align: justify;
 }
 
-a {
-	text-decoration: none;
-	color: $black;
-}
+// a {
+// 	text-decoration: none;
+// 	color: $black;
+// }
 
 .wrapper {
 	position: relative;
@@ -133,6 +133,7 @@ a {
 			font-size: 2rem;
 			font-weight: light;
 			margin-bottom: 1em;
+			z-index: 50;
 		}
 	}
 }
@@ -145,7 +146,7 @@ a {
 	height: 100vh;
 	width: 100vw;
 	position: fixed;
-	z-index: -1;
+	z-index: -5;
 }
 
 .header-mob {
