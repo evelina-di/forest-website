@@ -140,7 +140,7 @@ a {
 .bg {
 	background: $dark-gray-gradient,
 		url("/forest-website/dist/img/jungle-small.jpg");
-	background-repeat: no-repeat;
+	background-size: cover;
 	background-position: center;
 	height: 100vh;
 	width: 100vw;
@@ -178,6 +178,10 @@ a {
 		color: rgba(255, 255, 255);
 		font-weight: 400;
 	}
+}
+
+.section {
+	background-color: white;
 }
 
 // ABOUT-US //
