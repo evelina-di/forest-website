@@ -8,6 +8,7 @@ const emailInput = document.querySelector("#mail");
 const messageArea = document.querySelector("#question");
 const emailError = document.querySelector(".contact__form-error");
 const formInfo = document.querySelector(".contact__form-info");
+const form = document.querySelector("form");
 const submitBtn = document.querySelector(".submit");
 const subpages = ["contact", "404", "offer", "thankyou"];
 
@@ -38,36 +39,40 @@ const handleMobileMenu = () => {
 	});
 };
 
-const checkEmail = () => {
+const validateForm = () => {
 	const re =
 		/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+	console.log(emailInput.value + " em");
+	console.log(messageArea.value + " mes");
+
+	if (emailInput.value === "" || messageArea.value === "") {
+		formInfo.style.visibility = "visible";
+		formInfo.textContent = "Wypełnij oba pola aby wysłać wiadomość.";
+	}
 
 	if (!re.test(emailInput.value)) {
 		emailError.style.visibility = "visible";
 	} else {
 		emailError.style.visibility = "hidden";
-		clearContent();
-		showThankYouMessage();
 	}
-};
 
-const handleForm = () => {
-	if (emailInput.value === "" || messageArea.value === "") {
+	if (
+		emailInput.value !== "" &&
+		messageArea.value !== "" &&
+		re.test(emailInput.value)
+	) {
+		form.submit();
+		emailError.style.visibility = "hidden";
 		formInfo.style.visibility = "visible";
-		formInfo.textContent = "Wypełnij oba pola aby wysłać wiadomość.";
-	} else if (emailInput.value !== "" || !messageArea.value !== "") {
-		checkEmail();
+		formInfo.textContent = "Wiadomość wysłana!";
+		clearContent();
 	}
 };
 
 const clearContent = () => {
 	emailInput.value = "";
 	messageArea.value = "";
-};
-
-const showThankYouMessage = () => {
-	formInfo.style.visibility = "visible";
-	formInfo.textContent = "Wiadomość wysłana!";
 };
 
 const handleCurrentYear = () => {
@@ -77,6 +82,11 @@ const handleCurrentYear = () => {
 
 handleMobileMenu();
 burgerIcon.addEventListener("click", handleBurgerMenu);
-handleCurrentYear();
 handleMobHeader();
-submitBtn.addEventListener("click", handleForm);
+form.addEventListener("submit", (e) => {
+	e.preventDefault();
+
+	validateForm();
+});
+
+handleCurrentYear();

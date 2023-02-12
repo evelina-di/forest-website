@@ -121,7 +121,7 @@ a {
 	font-size: 1.3rem;
 	text-align: center;
 	background-image: $dark-gray-gradient,
-		url("/forest-website/dist/img/jungle-small.jpg");
+		url("/forest-website/dist/img/jungle-big.jpg");
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -146,7 +146,7 @@ a {
 			rgb(70 133 65 / 75%),
 			rgba(0, 0, 0, 0.393)
 		),
-		url("/forest-website/dist/img/jungle-small.jpg");
+		url("/forest-website/dist/img/jungle-big.jpg");
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -328,9 +328,9 @@ a {
 	textarea {
 		font-family: inherit;
 		width: 100%;
-		padding: 0.5em;
+		padding: 1.3em;
 		border: 1px solid rgba(0, 0, 0, 0.393);
-		border-radius: 5px;
+		border-radius: 3px;
 	}
 
 	textarea {
@@ -340,6 +340,7 @@ a {
 
 	button {
 		border: none;
+		width: 100%;
 		background-color: $light-green;
 		border-radius: 5px;
 		align-self: flex-end;
@@ -703,6 +704,11 @@ a {
 
 		i {
 			margin-top: 1em;
+		}
+
+		button {
+			width: 250px;
+			justify-self: flex-end;
 		}
 
 		&__form input,
