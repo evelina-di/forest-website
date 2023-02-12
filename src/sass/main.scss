@@ -121,7 +121,7 @@ a {
 	font-size: 1.3rem;
 	text-align: center;
 	background-image: $dark-gray-gradient,
-		url("/forest-website/dist/img/jungle-big.jpg");
+		url("/forest-website/dist/img/jungle-small.jpg");
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -146,7 +146,7 @@ a {
 			rgb(70 133 65 / 75%),
 			rgba(0, 0, 0, 0.393)
 		),
-		url("/forest-website/dist/img/jungle-big.jpg");
+		url("/forest-website/dist/img/jungle-small.jpg");
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -283,10 +283,20 @@ a {
 		margin: 1em 0 3em 0;
 		font-size: 1.2rem;
 		color: $black;
+		text-decoration: underline;
 	}
 
-	&__link-homepage:visited,
 	&__details-link:visited {
+		color: $black;
+	}
+}
+
+.subpage {
+	&__link-homepage {
+		text-decoration: underline;
+	}
+
+	&__link-homepage:visited {
 		color: $black;
 	}
 
@@ -416,6 +426,9 @@ a {
 	p {
 		padding-top: 2em;
 	}
+
+	.subpage__link-homepage {
+	}
 }
 
 // MEDIA //
@@ -437,7 +450,7 @@ a {
 	.header {
 		height: 75vh;
 		background-image: $dark-gray-gradient,
-			url("/forest-website/dist/img/jungle-big.jpg");
+			url("/forest-website/dist/img/jungle-small.jpg");
 	}
 
 	.about-us {
