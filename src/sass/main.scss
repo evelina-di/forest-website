@@ -120,11 +120,6 @@ a {
 	top: 0;
 	font-size: 1.3rem;
 	text-align: center;
-	// background-image: $dark-gray-gradient,
-	// 	url("/forest-website/dist/img/jungle-small.jpg");
-	// background-size: cover;
-	// background-position: center;
-	// background-attachment: fixed;
 
 	&__text {
 		color: #fff;
@@ -158,6 +153,7 @@ a {
 		url("/forest-website/dist/img/jungle-small.jpg");
 	background-position: center;
 	background-attachment: fixed;
+	z-index: -1;
 }
 
 .header-mob {
@@ -180,6 +176,7 @@ a {
 		font-size: 1.6rem;
 		color: rgba(255, 255, 255);
 		font-weight: 400;
+		z-index: 50;
 	}
 }
 
