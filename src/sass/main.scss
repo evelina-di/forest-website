@@ -135,7 +135,7 @@ a {
 
 .bg {
 	background: $dark-gray-gradient,
-		url("/forest-website/dist/img/jungle-small.jpg");
+		url("/forest-website/dist/img/jungle-big.jpg");
 	background-size: cover;
 	background-position: center;
 	height: 100vh;
@@ -153,7 +153,7 @@ a {
 			rgb(70 133 65 / 75%),
 			rgba(0, 0, 0, 0.393)
 		),
-		url("/forest-website/dist/img/jungle-small.jpg");
+		url("/forest-website/dist/img/jungle-big.jpg");
 	// background-position: center;
 	display: flex;
 	align-items: flex-end;
